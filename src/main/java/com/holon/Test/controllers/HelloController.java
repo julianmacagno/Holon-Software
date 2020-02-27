@@ -10,10 +10,9 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 
 @RestController
 class HelloWorldController {
@@ -27,9 +26,11 @@ class HelloWorldController {
     @Autowired
     private JwtUtil jwtTokenUtil;
 
-    @RequestMapping({ "/hello" })
-    public String helloWorld() {
-        return "Hello World";
+    @RequestMapping(value="/hello", produces = "application/json")
+    public HashMap<String, String> helloWorld() {
+        HashMap map = new HashMap<String, String>();
+        map.put("Response", "Hello World");
+        return map;
     }
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)

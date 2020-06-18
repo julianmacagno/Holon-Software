@@ -1,0 +1,3 @@
+[console_scripts]
+fio-visualizer = fiovisualizer.fio_visualizer:main
+

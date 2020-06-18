@@ -1,0 +1,88 @@
+version: '3.1'
+
+services:
+  diskTest:
+    build: .
+    image: disktest
+    volumes:
+      - nas-telefonica:/mnt/nastelefonica
+      - nfs:/mnt/nfsmaster
+      - /opt/share/gwc-root/gwc:/mnt/nfslocal
+      - /opt/share/nas-telefonica:/mnt/naslocal
+      - /opt/share/testdisk:/mnt/local
+
+volumes:
+    nas-telefonica:
+        driver: local
+        driver_opts:
+            type: nfs
+            o: "addr=sfs-nas1.sa-argentina-1.telefonicaopencloud.com"
+            device: ":/share-5a9ef430"
+    nfs:
+        driver: local
+        driver_opts:
+            type: nfs
+            o: "addr=172.16.0.226"
+            device: ":/opt/share/gwc-root/gwc"
+
+# Volumenes NAS Telefónica
+#  sfs-nas-vector-01:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: "addr=sfs-nas1.sa-argentina-1.telefonicaopencloud.com"
+#      device: ":/share-5a9ef430"
+#  sfs-nas-vector-02:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: "addr=sfs-nas1.sa-argentina-1.telefonicaopencloud.com"
+#      device: ":/share-065fc3ea"
+#  sfs-nas-vector-03:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: "addr=sfs-nas1.sa-argentina-1.telefonicaopencloud.com"
+#      device: ":/share-5b78e8d5"
+#  sfs-nas-vector-04:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: "addr=sfs-nas1.sa-argentina-1.telefonicaopencloud.com"
+#      device: ":/share-ef38da27"
+#  sfs-nas-raster-01:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: "addr=sfs-nas1.sa-argentina-1.telefonicaopencloud.com"
+#      device: ":/share-1b648f7d"
+
+
+
+
+# Volumenes NFS en master 1
+
+#  gwc:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: "addr=172.16.0.226"
+#      device: ":/opt/share/gwc-root/gwc"
+#  vector-01:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: "addr=172.16.0.226"
+#      device: ":/opt/share/volume-vector-01/gwc"
+#  vector-02:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: "addr=172.16.0.226"
+#      device: ":/opt/share/volume-vector-02/gwc"
+#  vector-03:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: "addr=172.16.0.226"
+#      device: ":/opt/share/volume-vector-03/gwc"

@@ -1,0 +1,8 @@
+README.md
+setup.cfg
+setup.py
+Fio_Visualizer.egg-info/PKG-INFO
+Fio_Visualizer.egg-info/SOURCES.txt
+Fio_Visualizer.egg-info/dependency_links.txt
+Fio_Visualizer.egg-info/entry_points.txt
+Fio_Visualizer.egg-info/top_level.txt

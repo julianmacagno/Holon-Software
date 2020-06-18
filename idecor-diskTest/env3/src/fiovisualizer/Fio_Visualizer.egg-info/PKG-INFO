@@ -1,0 +1,31 @@
+Metadata-Version: 1.1
+Name: Fio-Visualizer
+Version: 1.0
+Summary: Data visualization tool for FIO
+Home-page: http://01.org/fio-visualizer
+Author: Andrey Kudryavtsev
+Author-email: andrey.o.kudryavtsev@intel.com
+License: intel
+Description: FioVisualizer
+        =============
+        
+        This is the description for FioVisualizer.
+        
+        FioVisualizer is a data visualization tool for FIO written in PyQtGraph. 
+        
+        It requires to be run on behalf of the root user, since it requires to access
+        block devices.
+        
+Keywords: fio virtualization
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific Engineering :: Information Analysis
+Classifier: License :: OSI Approved :: Intel Open Source License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
